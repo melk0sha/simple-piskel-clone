@@ -1,0 +1,137 @@
+.frames-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 140px;
+    overflow-y: auto;
+
+    .frames {
+        display: flex;
+        flex-direction: column;
+
+        .frames__frame {
+            position: relative;
+            min-width: 110px;
+            min-height: 110px;
+            width: 110px;
+            height: 110px;
+            margin-bottom: 20px;
+            border: 2px solid #383838;
+            border-radius: 3px;
+            background-image: 
+                linear-gradient($color-3,$color-3-2), 
+                linear-gradient($color-2 50%, $color 50%), 
+                linear-gradient(90deg, $color-2 50%, $color 50%); 
+            background-blend-mode: screen, difference, normal; 
+            background-size: 100% 100%, 1.2em 1.2em, 1.2em 1.2em;
+            image-rendering: pixelated;
+
+            .frames__canvas {
+                width: 100%;
+                height: 100%;
+            }
+
+            .frame__number {
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 35px;
+                height: 35px;
+                padding: 6px;
+                color: #ffffff;
+                font-size: 19px;
+                text-align: center;
+                background-color: #aa7bc0;
+                border-radius: 3px 0 3px 0;
+            }
+
+            .frame__delete {
+                display: none;
+                position: absolute;
+                right: 0;
+                top: 0;
+                width: 35px;
+                height: 35px;
+                background-image: url(../components/frames/assets/delete.png);
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            
+            .frame__copy {
+                display: none;
+                position: absolute;
+                right: 0;
+                bottom: 0;
+                width: 35px;
+                height: 35px;
+                background-image: url(../components/frames/assets/copy.png);
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+            
+            .frame__move {
+                display: none;
+                position: absolute;
+                left: 0;
+                bottom: 0;
+                width: 35px;
+                height: 35px;
+                background-image: url(../components/frames/assets/move.png);
+                background-size: 25px;
+                background-repeat: no-repeat;
+                background-position: center;
+            }
+        }
+        
+        .frames__frame:hover {
+            .frame__visible,
+            .frame__visible,
+            .frame__visible {
+                display: unset;
+            }
+        }
+
+        .frames__frame_selected {
+            border: 2px solid #aa7bc0;
+        }
+    }
+    
+    .add-frame__icon {
+        width: 50px;
+        min-width: 50px;
+        height: 50px;
+        min-height: 50px;
+        background-image: url(../components/frames/assets/plus.png);
+        opacity: 0.7;
+        background-size: contain;
+    }
+
+    .add-frame__icon:hover {
+        opacity: 1;
+        cursor: pointer;
+    }
+}
+
+.frames-container::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+    margin-right: -15px;
+    border-radius: 5px;
+}
+
+.frames-container::-webkit-scrollbar-button {
+    height: 0;
+}
+
+.frames-container::-webkit-scrollbar-track-piece {
+    background-color: #525252;
+    border-radius: 5px;
+}
+
+.frames-container::-webkit-scrollbar-thumb {
+    height: 10px;
+    background-color: #be6ce4;
+    border-radius: 5px;
+}

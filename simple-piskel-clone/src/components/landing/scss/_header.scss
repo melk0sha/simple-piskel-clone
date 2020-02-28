@@ -1,0 +1,54 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    height: 54px;
+    padding: 13px 13px 11px;
+    background-color: #424242;
+    align-items: center;
+    border-bottom: 2px solid #383838;
+}
+
+h1 {
+    display: none;
+}
+
+.logo {
+    width: 170px;
+    height: 30px;
+    background-image: url(../../../assets/header-logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.project-name {
+    color: #ffffff;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+.header-right {
+    display: flex;
+    justify-content: space-between;
+    
+    .btn {
+        height: 30px;
+        outline: none;
+        color: #ffffff;
+        font-weight: 700;
+        border-radius: 3px;
+        background-color: #aa7bc0;
+        border: none;
+        padding: 0 13px;
+        font-size: 16px;
+        box-shadow: 1px 1px 1px #222222;
+    }
+
+    .btn:hover {
+        background-color: #9670a8;
+        cursor: pointer;
+    }
+
+    .btn:active {
+        background-color: #9670a8c7;
+    }
+}

@@ -1,0 +1,47 @@
+.canvas-size {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+
+    .canvas-size__btn {
+        border: 1px solid transparent;
+        padding: 9px;
+        color: #ffffff;
+        font-size: 14px;
+        font-weight: 700;
+        background-color: transparent;
+    }
+
+    .canvas-size__btn:hover {
+        border: 1px solid #aa7bc0;
+        border-radius: 3px;
+    }
+
+    .canvas-size__btn_active {
+        border: 1px solid #aa7bc0;
+        color: #aa7bc0;
+        border-radius: 3px;
+        background-color: #aa7bc009;
+    }
+}
+
+.canvas-clear__btn {
+    width: 100%;
+    margin-top: 15px;
+    border: 1px solid #aa7bc0;
+    background-color: #aa7bc009;
+    border-radius: 3px;
+    padding: 10px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.canvas-clear__btn:hover {
+    background-color: #aa7bc0;
+    cursor: pointer;
+}
+
+.canvas-clear__btn:active {
+    background-color: #aa7bc0a4;
+}

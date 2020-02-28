@@ -1,0 +1,178 @@
+.tools-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-left: 2px;
+    width: 98px;
+    
+    .tools-row {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        .modal-keyboard {
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
+        .modal-keyboard:hover {
+            opacity: 1;
+            cursor: pointer;
+        }
+        
+        .modal-keyboard:active {
+            opacity: 0.3;
+        }
+    }
+
+    .pen-size {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+        width: 100%;
+
+        .pen-size__option {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 20px;
+            height: 20px;
+            margin: 0 2px 2px 2px;
+        }
+
+        .pen-size__option:hover {
+            border: 1px solid #aa7bc0;
+        }
+        
+        .pen-size__option_active {
+            border: 1px solid #aa7bc0;
+            .pen-size__size {
+                background-color: #aa7bc0;
+            }
+        }
+
+        .pen-size__size {
+            background-color: #ffffff;
+        }
+
+        .pen-size__1pixel .pen-size__size {
+            width: 6px;
+            height: 6px;
+        }
+
+        .pen-size__2pixel .pen-size__size {
+            width: 8px;
+            height: 8px;
+        }
+
+        .pen-size__3pixel .pen-size__size {
+            width: 10px;
+            height: 10px;
+        }
+
+        .pen-size__4pixel .pen-size__size {
+            width: 14px;
+            height: 14px;
+        }
+    }
+
+    .tools {
+        display: flex;
+        flex-wrap: wrap;
+
+        .tools__tool {
+            width: 46px;
+            height: 46px;
+            background-color: #424242;
+            margin: 1px;
+            background-size: 25px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .tools__tool:hover {
+            background-color: #aa7bc0;
+            cursor: pointer;
+        }
+
+        .tools__tool:active {
+            background-color: #aa7bc0a4;
+        }
+
+        .tools__tool_active {
+            border: 3px solid #aa7bc0;
+        }
+
+        .tools__pen {
+            background-image: url(../components/tools/assets/pen.png);
+        }
+
+        .tools__color-select {
+            background-image: url(../components/tools/assets/color-select.png);
+        }
+
+        .tools__paint-bucket {
+            background-image: url(../components/tools/assets/paint-bucket.png);
+        }
+        
+        .tools__eraser {
+            background-image: url(../components/tools/assets/eraser.png);
+        }
+        
+        .tools__paint-swap {
+            background-image: url(../components/tools/assets/paint-swap.png);
+        }
+        
+        .tools__stroke {
+            background-image: url(../components/tools/assets/stroke.png);
+        }
+    }
+
+    .palette {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+
+        .palette__color {
+            width: 40px;
+            height: 40px;
+            border: 2px solid #c392da;
+            border-radius: 50%;
+        }
+
+        .palette__color:hover {
+            border: 2px solid #ffffff;
+        }
+
+        .palette__swap {
+            width: 25px;
+            height: 25px;
+            margin: 7px 0;
+            background-image: url(../assets/color-swap.png);
+            background-size: contain;
+            opacity: 0.7;
+        }
+        
+        .palette__swap:hover {
+            opacity: 1;
+        }
+
+        .palette__primary,
+        .palette__secondary {
+            margin: 0 20px 1px 18px;
+            overflow: hidden;
+            
+        }
+        .palette__primary::-webkit-color-swatch,
+        .palette__secondary::-webkit-color-swatch {
+            border: none;
+        }
+        
+        .palette__primary::-webkit-color-swatch-wrapper,
+        .palette__secondary::-webkit-color-swatch-wrapper {
+            padding: 0;
+        }
+    }
+}

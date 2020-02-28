@@ -1,0 +1,50 @@
+.options-container {
+    display: flex;
+    width: 5%;
+
+    .options {
+        display: flex;
+        flex-direction: column;
+
+        .export {
+            width: 46px;
+            height: 46px;
+            background-color: #424242;
+            margin: 1px;
+        }
+
+        .export-btn {
+            background-image: url(../assets/export.png);
+            background-size: 30px;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        .export-gif,
+        .export-upng {
+            display: flex;
+            color: #ffffff;
+            justify-content: center;
+            align-items: center;
+            font-size: 14px;
+            margin-top: 10px;
+        }
+
+        .export-upng {
+            font-size: 12px;
+        }
+
+        .export_closed {
+            display: none;
+        }
+
+        .export:hover {
+            background-color: #aa7bc0;
+            cursor: pointer;
+        }
+
+        .export:active {
+            background-color: #815c92;
+        }
+    }
+}

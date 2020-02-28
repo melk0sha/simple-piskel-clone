@@ -1,0 +1,142 @@
+.modal-keyboard {
+    width: 50px;
+    height: 50px;
+    background-image: url(../components/modalWindow/assets/keyboard.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    position: fixed;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 70vw;
+    height: 500px;
+    background-color: #aa7bc0;
+    border-radius: 10px;
+    
+    .modal__header {
+        text-align: center;
+        font-size: 30px;
+        margin-bottom: 10px;
+        color: #ffffff;
+    }
+
+    .modal__main {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 395px;
+        background-color: #353535;
+        border-radius: 10px;
+        padding: 15px;
+        color: #ffffff;
+
+        .tool-keys,
+        .misc-keys {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tool-keys__header,
+        .misc-keys__header {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        .keys {
+            font-size: 16px;
+
+        }
+
+        .key {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        .key__active {
+            .btn-key {
+                background-color: #4e315c;
+            }
+        }
+
+        .btn-key {
+            padding-top: 3px;
+            text-align: center;
+            width: 30px;
+            height: 30px;
+            margin-right: 10px;
+            border: 2px solid #ffffff;
+            background-color: #9169a3;
+        }
+        
+        .btn-key:hover {
+            border-color: #c7c7c7;
+            background-color: #745383;
+        }
+
+        .btn-key:active {
+            border-color: #868686;
+            background-color: #513a5c;
+        }
+    }
+
+    .modal__exit {
+        position: absolute;
+        height: 30px;
+        width: 30px;
+        right: 10;
+        top: 10;
+        background-image: url(../components/modalWindow/assets/exit.png);
+        background-repeat: no-repeat;
+        background-size: contain;
+        cursor: pointer;
+    }
+
+    .modal__exit:hover {
+        opacity: 0.5;
+    }
+
+    .modal__exit:active {
+        opacity: 0.7;
+    }
+
+    .modal__btn {
+        position: absolute;
+        right: 10;
+        bottom: 10;
+        padding: 0 13px;
+        height: 30px;
+        outline: none;
+        color: #ffffff;
+        font-weight: 700;
+        border-radius: 3px;
+        background-color: #353535;
+        border: none;
+        font-size: 16px;
+        box-shadow: 1px 1px 1px #222222;
+    }
+
+    .modal__btn:hover {
+        background-color: #795a88;
+        cursor: pointer;
+    }
+
+    .modal__btn:active {
+        background-color: #53395f;
+    }
+}
+
+.modal_closed {
+    display: none;
+}

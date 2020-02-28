@@ -1,0 +1,193 @@
+<!DOCTYPE >
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Piskel Clone Editor</title>
+    <script src="//cdn.rawgit.com/antimatter15/jsgif/master/LZWEncoder.js"></script>
+    <script src="//cdn.rawgit.com/antimatter15/jsgif/master/NeuQuant.js"></script>
+    <script src="//cdn.rawgit.com/antimatter15/jsgif/master/GIFEncoder.js"></script>
+    <script src="//cdn.rawgit.com/antimatter15/jsgif/master/Demos/b64.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu:400,500,600,700&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="https://avatars.mds.yandex.net/get-pdb/69339/2afccd64-18b1-4201-bad7-e21ed98101c3/s1200" type="image/png">
+</head>
+<body>
+<div class="wrapper">
+    <header>
+        <h1 class="heading">Piskel Clone</h1>
+        <div class="logo"></div>
+        <div class="header-right">
+            <img class="user-photo user-photo_closed" src="" alt="User photo">
+            <p class="user-name user-name_closed"></p>
+            <a class="create-piskel__link" href="./main.html" target="_blank">
+                <button class="btn create-piskel">Create Piskel</button>
+            </a>
+            <button class="btn sign-in">Sign In</button>
+        </div>
+    </header>
+    
+    <main>
+        <div class="tools-container">
+            <div class="tools-row">
+                <ul class="pen-size">
+                    <li class="pen-size__option pen-size__1pixel pen-size__option_active" data-value="1">
+                        <div class="pen-size__size"></div>
+                    </li>
+                    <li class="pen-size__option pen-size__2pixel" data-value="2">
+                        <div class="pen-size__size"></div>
+                    </li>
+                    <li class="pen-size__option pen-size__3pixel" data-value="3">
+                        <div class="pen-size__size"></div>
+                    </li>
+                    <li class="pen-size__option pen-size__4pixel" data-value="4">
+                        <div class="pen-size__size"></div>
+                    </li>
+                </ul>
+                <ul class="tools">
+                    <li class="tools__tool tools__pen tools__tool_active" data-tool="pen"></li>
+                    <li class="tools__tool tools__color-select" data-tool="color-select"></li>
+                    <li class="tools__tool tools__paint-bucket" data-tool="paint-bucket"></li>
+                    <li class="tools__tool tools__eraser" data-tool="eraser"></li>
+                    <li class="tools__tool tools__paint-swap" data-tool="paint-swap"></li>
+                    <li class="tools__tool tools__stroke" data-tool="stroke"></li>
+                </ul>
+            </div>
+            <div class="tools-row">
+                <div class="palette">
+                    <input class="palette__color palette__primary" type="color" value="#aa7bc0">
+                    <div class="palette__swap"></div>
+                    <input class="palette__color palette__secondary" type="color" value="#000000">
+                </div>
+                <div class="modal-keyboard"></div>
+            </div>
+        </div>
+        <div class="frames-container">
+            <ul class="frames">
+                <li class="frames__frame frames__frame_selected" data-number="0">
+                    <canvas class="canvas frames__canvas" width="512" height="512"></canvas>
+                    <div class="frame__number">1</div>
+                    <div class="frame__delete"></div>
+                    <div class="frame__copy frame__visible"></div>
+                    <div class="frame__move"></div>
+                </li>
+            </ul>
+            <div class="add-frame__icon"></div>
+        </div>
+        <div class="canvas-container">
+            <canvas class="canvas main-canvas"></canvas>
+        </div>
+        <div class="toolbox-container">
+            <div class="preview-container">
+                <canvas class="preview" width="512" height="512"></canvas>
+                <div class="preview__full"></div>
+            </div>
+            <div class="fps">
+                <p class="fps__info">FPS: <span class="fps__value"></span></p>
+                <input class="fps__range" type="range" min="1" max="24" step="1" value="12"> 
+            </div>
+            <div class="canvas-size">
+                <button class="canvas-size__btn canvas-size__btn__32x32 canvas-size__btn_active" data-resolution="32">
+                    32x32
+                </button>
+                <button class="canvas-size__btn canvas-size__btn__64x64" data-resolution="64">
+                    64x64
+                </button>
+                <button class="canvas-size__btn canvas-size__btn__128x128" data-resolution="128">
+                    128x128
+                </button>
+            </div>
+            <button class="canvas-clear__btn">Clear</button>
+        </div>
+        <div class="options-container">
+            <ul class="options">
+                <li class="export export-btn"></li>
+                <li class="export export-gif export_closed">.GIF</li>
+                <li class="export export-upng export_closed">.UPNG</li>
+            </ul>
+        </div>
+    </main>
+
+    <div class="modal modal_closed">
+        <h2 class="modal__header">Keyboard Shortcuts</h3>
+        <div class="modal__main">
+            <div class="tool-keys">
+                <h3 class="tool-keys__header">Tool Shortcuts</h3>
+                <div class="keys">
+                    <div class="key pen-key select-key">
+                        <span class="btn-key pen-key__key">P</span>
+                        <p class="pen-key__description">Pen tool</p>
+                    </div>
+                    <div class="key color-select-key select-key">
+                        <span class="btn-key color-select-key__key">O</span>
+                        <p class="color-select-key__description">Color Select tool</p>
+                    </div>
+                    <div class="key paint-bucket-key select-key">
+                        <span class="btn-key paint-bucket-key__key">B</span>
+                        <p class="paint-bucket-key__description">Paint Bucket tool</p>
+                    </div>
+                    <div class="key eraser-key select-key">
+                        <span class="btn-key eraser-key__key">E</span>
+                        <p class="eraser-key__description">Eraser tool</p>
+                    </div>
+                    <div class="key paint-swap-key select-key">
+                        <span class="btn-key paint-swap-key__key">A</span>
+                        <p class="paint-swap-key__description">Paint Swap tool</p>
+                    </div>
+                    <div class="key stroke-key select-key">
+                        <span class="btn-key stroke-key__key">L</span>
+                        <p class="stroke-key__description">Stroke tool</p>
+                    </div>
+                </div>
+            </div>
+            <div class="misc-keys">
+                <h3 class="misc-keys__header">Misc Shortcuts</h3>
+                <div class="keys">
+                    <div class="key swap-colors-key select-key">
+                        <span class="btn-key swap-colors-key__key">X</span>
+                        <p class="swap-colors-key__description">Swap primary/secondary colors</p>
+                    </div>
+                    <div class="key full-screen-key select-key">
+                        <span class="btn-key full-screen-key__key">F</span>
+                        <p class="full-screen-key__description">Open fullscreen preview</p>
+                    </div>
+                    <div class="key add-new-frame-key select-key">
+                        <span class="btn-key add-new-frame-key__key">N</span>
+                        <p class="add-new-frame-key__description">Add new frame</p>
+                    </div>
+                    <div class="key delete-frame-key select-key">
+                        <span class="btn-key delete-frame-key__key">D</span>
+                        <p class="delete-frame-key__description">Delete selected frame</p>
+                    </div>
+                    <div class="key copy-frame-key select-key">
+                        <span class="btn-key copy-frame-key__key">C</span>
+                        <p class="copy-frame-key__description">Copy selected frame</p>
+                    </div>
+                    <div class="key clear-canvas-key select-key">
+                        <span class="btn-key clear-canvas-key__key">W</span>
+                        <p class="clear-canvas-key__description">Clear current canvas</p>
+                    </div>
+                    <div class="key export-gif-key select-key">
+                        <span class="btn-key export-gif-key__key">T</span>
+                        <p class="export-gif-key__description">Export animation to file system (.gif)</p>
+                    </div>
+                    <div class="key export-apng-key select-key">
+                        <span class="btn-key export-apng-key__key">G</span>
+                        <p class="export-apng-key__description">Export animation to file system (.apng)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="modal__exit"></div>
+        <button class="modal__btn modal__default">Restore default shortcuts</button>
+    </div>
+
+    <div class="key-error key-error_closed">
+        <p class="key-error__description">Please use only english letters (ex. A)</p>
+        <button class="key-error__btn key-error__exit">OK</button>
+    </div>
+</div>
+
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.6.2/firebase-auth.js"></script>
+</body>
+</html>

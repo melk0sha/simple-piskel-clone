@@ -1,0 +1,26 @@
+@import "./reset";
+
+body {
+    background-color: #242424;
+}
+
+.wrapper {
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    font-family: "Ubuntu", sans-serif;
+}
+
+@import "./variables";
+@import "./header";
+@import "./main";
+@import "./canvasOptions";
+@import "./keyErrorModalWindow";
+@import "../components/modalWindow/modalWindow.scss";
+@import "../components/canvas/canvas.scss";
+@import "../components/export/export.scss";
+@import "../components/preview/preview.scss";
+@import "../components/tools/tools.scss";
+@import "../components/frames/frames.scss";

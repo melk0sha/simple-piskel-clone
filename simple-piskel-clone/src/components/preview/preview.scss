@@ -1,0 +1,88 @@
+.toolbox-container {
+    width: 15%;
+
+    .preview-container {
+        width: 100%;
+        position: relative;
+
+        .preview {
+            width: 100%;
+            height: 203px;
+            border: 2px solid #aa7bc0;
+            border-bottom: none;
+            border-radius: 3px 3px 0 0;
+            background-image: 
+                linear-gradient($color-3,$color-3-2), 
+                linear-gradient($color-2 50%, $color 50%), 
+                linear-gradient(90deg, $color-2 50%, $color 50%); 
+            background-blend-mode: screen, difference, normal; 
+            background-size: 100% 100%, 1.2em 1.2em, 1.2em 1.2em;
+        }
+
+        .preview__full {
+            display: none;
+            position: absolute;
+            right: 10;
+            top: 10;
+            width: 25px;
+            height: 25px;
+            background-image: url(../assets/full-screen.png);
+            background-size: contain;
+        }
+    }
+
+    .preview-container:hover {
+
+        .preview__full {
+            display: unset;
+        }
+    }
+
+    .fps {
+        border: 2px solid #aa7bc0;
+        border-top: none;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 10px;
+        background-color: #3d3d3d;
+        border-radius: 0 0 3px 3px;
+        
+        .fps__info {
+            color: #ffffff;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .fps__range {
+            -webkit-appearance: none;
+            margin-top: 5px;
+            width: 66%;
+            height: 7px;
+            border-radius: 5px;   
+            background: #d3d3d3;
+            outline: none;
+            opacity: 0.7;
+            -webkit-transition: .2s;
+            transition: opacity .2s;
+        }
+        
+        .fps__range::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%; 
+            background: #aa7bc0;
+            cursor: pointer;
+        }
+        
+        .fps__range::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #aa7bc0;
+            cursor: pointer;
+        }
+    }
+}
