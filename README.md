@@ -18,10 +18,10 @@ In the editor page you can:
 - choose a brush size, change its color
 - choose tools or use functions via keyboard shortcuts and change them
 - use a pen, an erase, fill a closed area, paint out a specific color by another color, choose a color from the frame
-- manipulate frames (*add new / copy / replace / delete / clear*)
-- change resolution (*32x32 / 64x64 / 128x128*)
+- manipulate frames (_add new / copy / replace / delete / clear_)
+- change resolution (_32x32 / 64x64 / 128x128_)
 - watch GIF preview in the upper right corner or in full screen mode
-- change FPS from *1* to *24* (frames per second)
+- change FPS from _1_ to _24_ (frames per second)
 - export created GIF in `.upng` or `.gif` format
 
 ---
