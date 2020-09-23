@@ -1,7 +1,5 @@
 # Simple Piskel Clone
 
-> Will be finalized.
-
 ---
 
 ## DEPLOYMENT
